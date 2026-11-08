@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Champion Pool</title>
+  <meta name="description" content="Mark which champions you play in each role and comfort tier, then share the result as an image or a link.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ddragon.leagueoflegends.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@700;800;900&family=Alegreya:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1><span class="h-ink">Champion</span> <span class="h-accent">Pool</span></h1>
+    <label class="name-field" for="player-name">
+      <span>Player name</span>
+      <input id="player-name" type="text" maxlength="40" placeholder="Optional" autocomplete="off" spellcheck="false">
+    </label>
+  </header>
+
+  <main>
+    <p class="hint">Pick a role and tier, then tap champions to add them. Tap a champion again to remove it.</p>
+
+    <section id="board" class="card board" aria-label="Your champion pool"></section>
+
+    <section id="pool" class="card pool" aria-label="Champion picker">
+      <div class="target-bar" id="target-bar">
+        <div class="seg" id="role-seg" role="group" aria-label="Role"></div>
+        <div class="seg" id="tier-seg" role="group" aria-label="Tier"></div>
+        <p class="target-readout" id="target-readout" aria-live="polite"></p>
+      </div>
+
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search champions" autocomplete="off" spellcheck="false" aria-label="Search champions">
+        <div class="chips" id="tag-chips" role="group" aria-label="Filter by class"></div>
+        <p class="count" id="pool-count" aria-live="polite"></p>
+      </div>
+
+      <div id="pool-status" class="pool-status" role="status"></div>
+      <div id="pool-grid" class="pool-grid"></div>
+    </section>
+
+    <section class="actions" aria-label="Actions">
+      <button type="button" id="btn-download" class="btn btn-primary">Download PNG</button>
+      <button type="button" id="btn-copy" class="btn">Copy share link</button>
+      <button type="button" id="btn-clear" class="btn btn-quiet">Clear all</button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p id="legal"></p>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
