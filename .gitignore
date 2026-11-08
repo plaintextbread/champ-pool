@@ -1,0 +1,10 @@
+# Allowlist: ignore everything, then un-ignore only the files the site serves.
+# A new top-level file or folder needs its own "!" line to be committed.
+*
+!.gitignore
+!.nojekyll
+!CNAME
+!index.html
+!style.css
+!js/
+!js/*.js
